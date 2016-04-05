@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task 13@IFE</title>
+</head>
+<body>
+	<label>请输入北京今天空气质量：<input id="aqi-input" type="text"></input></label>
+	<button id="button">确认填写</button>
+	<div>您输入的值是：<span id="aqi-display">尚无输入</span></div>
+<script type="text/javascript">
+(function() {
+  /*	
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
+  */
+  // 给按钮button绑定一个点击事件
+  document.getElementById('button').onclick = function(){
+  	changeSpan();
+  }
+  //获取aqi-input输入的值，并显示在aqi-display中
+  function changeSpan(){
+  	var val = document.getElementById('aqi-input').value; 
+  	//判断aqi-input输入的值是否为空值
+  	if (val.trim()=="") {
+  		document.getElementById('aqi-display').innerHTML = "尚无输入";
+  		//return 跳出当前函数（将控制权交给页面！）
+  		return;
+  	}
+  	document.getElementById('aqi-display').innerHTML = val;
+  }
+})();
+</script>
+</body>
+</html>
